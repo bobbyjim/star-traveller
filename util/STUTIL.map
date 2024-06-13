@@ -1,0 +1,519 @@
+Modules list:
+-------------
+main.o:
+    CODE              Offs=000000  Size=0002BF  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=0000CB  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_directerrno.o):
+    CODE              Offs=0002BF  Size=000009  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_file.o):
+    DATA              Offs=000000  Size=00001E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_hextab.o):
+    RODATA            Offs=0000CB  Size=000010  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_longminstr.o):
+    RODATA            Offs=0000DB  Size=00000C  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_mappederrno.o):
+    CODE              Offs=0002C8  Size=00000F  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_oserror.o):
+    BSS               Offs=000000  Size=000001  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_printf.o):
+    CODE              Offs=0002D7  Size=0003A5  Align=00001  Fill=0000
+    BSS               Offs=000001  Size=00002B  Align=00001  Fill=0000
+    DATA              Offs=00001E  Size=000003  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(_seterrno.o):
+    CODE              Offs=00067C  Size=000009  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(addeqsp.o):
+    CODE              Offs=000685  Size=000011  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(addysp.o):
+    CODE              Offs=000696  Size=00000E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(aslax1.o):
+    CODE              Offs=0006A4  Size=000008  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(aslax4.o):
+    CODE              Offs=0006AC  Size=000011  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(axlong.o):
+    CODE              Offs=0006BD  Size=00000D  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(callmain.o):
+    CODE              Offs=0006CA  Size=000017  Align=00001  Fill=0000
+    DATA              Offs=000021  Size=000004  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(condes.o):
+    CODE              Offs=0006E1  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=000025  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=00000C  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(crt0.o):
+    STARTUP           Offs=000000  Size=000021  Align=00001  Fill=0000
+    ONCE              Offs=00000C  Size=00001B  Align=00001  Fill=0000
+    INIT              Offs=000000  Size=000002  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(ctype.o):
+    RODATA            Offs=0000E7  Size=00008B  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(ctypemask.o):
+    CODE              Offs=0006ED  Size=00001E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(decsp4.o):
+    CODE              Offs=00070B  Size=00000D  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(decsp6.o):
+    CODE              Offs=000718  Size=00000D  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(errno.o):
+    BSS               Offs=00002C  Size=000002  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(exehdr.o):
+    EXEHDR            Offs=000000  Size=00000C  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(filedes.o):
+    CODE              Offs=000725  Size=00000E  Align=00001  Fill=0000
+    DATA              Offs=00004A  Size=000010  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(fwrite.o):
+    CODE              Offs=000733  Size=00007B  Align=00001  Fill=0000
+    BSS               Offs=00002E  Size=000002  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(incax2.o):
+    CODE              Offs=0007AE  Size=000007  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(incax6.o):
+    CODE              Offs=0007B5  Size=000005  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(incaxy.o):
+    CODE              Offs=0007BA  Size=00000B  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(incsp2.o):
+    CODE              Offs=0007C5  Size=000015  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(incsp6.o):
+    CODE              Offs=0007DA  Size=000005  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(kernal.o):
+/Users/rje/git/cc65/lib/cx16.lib(ldaxsp.o):
+    CODE              Offs=0007DF  Size=000009  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(leaaxsp.o):
+    CODE              Offs=0007E8  Size=00000C  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(lneg.o):
+    CODE              Offs=0007F4  Size=00001E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(loadaddr.o):
+    LOADADDR          Offs=000000  Size=000002  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(lpush.o):
+    CODE              Offs=000812  Size=00001E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(ltoa.o):
+    CODE              Offs=000830  Size=000093  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(mul.o):
+    CODE              Offs=0008C3  Size=000045  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(mul8.o):
+    CODE              Offs=000908  Size=00003A  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(mulax10.o):
+    CODE              Offs=000942  Size=000019  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(oserror.o):
+    CODE              Offs=00095B  Size=000016  Align=00001  Fill=0000
+    RODATA            Offs=000172  Size=00005A  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(popptr1.o):
+    CODE              Offs=000971  Size=00000E  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(printf.o):
+    CODE              Offs=00097F  Size=000033  Align=00001  Fill=0000
+    BSS               Offs=000030  Size=000001  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(push1.o):
+    CODE              Offs=0009B2  Size=000005  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(pushax.o):
+    CODE              Offs=0009B7  Size=00001A  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(pushwsp.o):
+    CODE              Offs=0009D1  Size=00001C  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(rwcommon.o):
+    CODE              Offs=0009ED  Size=00001A  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(staxsp.o):
+    CODE              Offs=000A07  Size=00000B  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(strlen.o):
+    CODE              Offs=000A12  Size=000016  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(strlower.o):
+    CODE              Offs=000A28  Size=000027  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(strncpy.o):
+    CODE              Offs=000A4F  Size=000042  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(subysp.o):
+    CODE              Offs=000A91  Size=00000D  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(udiv.o):
+    CODE              Offs=000A9E  Size=00004F  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(vfprintf.o):
+    CODE              Offs=000AED  Size=000060  Align=00001  Fill=0000
+    DATA              Offs=00005A  Size=000008  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(write.o):
+    CODE              Offs=000B4D  Size=000052  Align=00001  Fill=0000
+    ONCE              Offs=000027  Size=000011  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(zerobss.o):
+    CODE              Offs=000B9F  Size=000023  Align=00001  Fill=0000
+/Users/rje/git/cc65/lib/cx16.lib(zeropage.o):
+    ZEROPAGE          Offs=000000  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000022  00003B  00001A  00001
+LOADADDR              0007FF  000800  000002  00001
+EXEHDR                000801  00080C  00000C  00001
+STARTUP               00080D  00082D  000021  00001
+CODE                  00082E  0013EF  000BC2  00001
+RODATA                0013F0  0015BB  0001CC  00001
+DATA                  0015BC  00161D  000062  00001
+INIT                  00161E  00161F  000002  00001
+BSS                   001620  001650  000031  00001
+ONCE                  001620  001659  00003A  00001
+
+
+Exports list by name:
+---------------------
+BSOUT                     00FFD2 RLA    CHROUT                    00FFD2 RLA    
+CKOUT                     00FFC9 RLA    CLRCH                     00FFCC RLA    
+OPEN                      00FFC0 RLA    READST                    00FFB7 RLA    
+SETLFS                    00FFBA RLA    __BSS_RUN__               001620 RLA    
+__BSS_SIZE__              000031 REA    __CONSTRUCTOR_COUNT__     000001 REA    
+__CONSTRUCTOR_TABLE__     001658 RLA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      0015BC RLA    __EXEHDR__                000001 REA    
+__HEADER_LAST__           00080D RLA    __HIMEM__                 009F00 REA    
+__LOADADDR__              000001 REA    __MAIN_SIZE__             0096F3 REA    
+__MAIN_START__            00080D RLA    __ONCE_RUN__              001620 RLA    
+__STACKSIZE__             000800 REA    __STARTUP__               000001 REA    
+__ctype                   0014D7 RLA    __ctypeidx                0014E2 RLA    
+__directerrno             000AED RLA    __errno                   00164C RLA    
+__hextab                  0014BB RLA    __longminstr              0014CB RLA    
+__mappederrno             000AF6 RLA    __oserror                 001620 RLA    
+__osmaperrno              001189 RLA    __printf                  000BF8 RLA    
+__seterrno                000EAA RLA    _fwrite                   000F61 RLA    
+_ltoa                     001076 RLA    _main                     000ADE RLA    
+_printf                   0011AD RLA    _stdout                   0015D6 RLA    
+_strlen                   001240 RLA    _strlower                 001256 RLA    
+_strncpy                  00127D RLA    _ultoa                    0010B5 RLA    
+_vfprintf                 001352 RLA    _write                    00137B RLA    
+addeqysp                  000EB5 RLA    addysp                    000EC5 RLA    
+aslax1                    000ED2 RLA    aslax4                    000EDA RLA    
+axlong                    000EEB RLA    axulong                   000EF1 RLA    
+callmain                  000EF8 RLA    ctypemaskdirect           000F1F RLA    
+decsp4                    000F39 RLA    decsp6                    000F46 RLA    
+donelib                   000F0F RLA    fdtab                     001606 RLA    
+incax2                    000FDC RLA    incax6                    000FE3 RLA    
+incaxy                    000FEA RLA    incsp2                    000FFA RLA    
+incsp6                    001008 RLA    initlib                   001620 RLA    
+initstdout                001647  LAI   ldaxysp                   00100F RLA    
+leaa0sp                   001016 RLA    mul8x16                   001138 RLA    
+mul8x16a                  001142 RLA    mulax10                   001170 RLA    
+negeax                    001022 RLA    popax                     000FF3 RLA    
+popptr1                   00119F RLA    ptr1                      00002A RLZ    
+ptr2                      00002C RLZ    ptr3                      00002E RLZ    
+ptr4                      000030 RLZ    push0                     0011E5 RLA    
+push1                     0011E0 RLA    pusha0                    0011E7 RLA    
+pushax                    0011E9 RLA    pusheax                   001047 RLA    
+pushwysp                  001201 RLA    regbank                   000036 RLZ    
+rwcommon                  00121B RLA    sp                        000022 RLZ    
+sreg                      000024 RLZ    staxysp                   001237 RLA    
+subysp                    0012BF RLA    tmp1                      000032 RLZ    
+tmp2                      000033 RLZ    tmp3                      000034 RLZ    
+tosudivax                 0012CE RLA    tosumulax                 0010F1 RLA    
+zerobss                   0013CD RLA    
+
+
+Exports list by value:
+----------------------
+__DESTRUCTOR_COUNT__      000000 REA    __STARTUP__               000001 REA    
+__EXEHDR__                000001 REA    __LOADADDR__              000001 REA    
+__CONSTRUCTOR_COUNT__     000001 REA    sp                        000022 RLZ    
+sreg                      000024 RLZ    ptr1                      00002A RLZ    
+ptr2                      00002C RLZ    ptr3                      00002E RLZ    
+ptr4                      000030 RLZ    __BSS_SIZE__              000031 REA    
+tmp1                      000032 RLZ    tmp2                      000033 RLZ    
+tmp3                      000034 RLZ    regbank                   000036 RLZ    
+__STACKSIZE__             000800 REA    __MAIN_START__            00080D RLA    
+__HEADER_LAST__           00080D RLA    _main                     000ADE RLA    
+__directerrno             000AED RLA    __mappederrno             000AF6 RLA    
+__printf                  000BF8 RLA    __seterrno                000EAA RLA    
+addeqysp                  000EB5 RLA    addysp                    000EC5 RLA    
+aslax1                    000ED2 RLA    aslax4                    000EDA RLA    
+axlong                    000EEB RLA    axulong                   000EF1 RLA    
+callmain                  000EF8 RLA    donelib                   000F0F RLA    
+ctypemaskdirect           000F1F RLA    decsp4                    000F39 RLA    
+decsp6                    000F46 RLA    _fwrite                   000F61 RLA    
+incax2                    000FDC RLA    incax6                    000FE3 RLA    
+incaxy                    000FEA RLA    popax                     000FF3 RLA    
+incsp2                    000FFA RLA    incsp6                    001008 RLA    
+ldaxysp                   00100F RLA    leaa0sp                   001016 RLA    
+negeax                    001022 RLA    pusheax                   001047 RLA    
+_ltoa                     001076 RLA    _ultoa                    0010B5 RLA    
+tosumulax                 0010F1 RLA    mul8x16                   001138 RLA    
+mul8x16a                  001142 RLA    mulax10                   001170 RLA    
+__osmaperrno              001189 RLA    popptr1                   00119F RLA    
+_printf                   0011AD RLA    push1                     0011E0 RLA    
+push0                     0011E5 RLA    pusha0                    0011E7 RLA    
+pushax                    0011E9 RLA    pushwysp                  001201 RLA    
+rwcommon                  00121B RLA    staxysp                   001237 RLA    
+_strlen                   001240 RLA    _strlower                 001256 RLA    
+_strncpy                  00127D RLA    subysp                    0012BF RLA    
+tosudivax                 0012CE RLA    _vfprintf                 001352 RLA    
+_write                    00137B RLA    zerobss                   0013CD RLA    
+__hextab                  0014BB RLA    __longminstr              0014CB RLA    
+__ctype                   0014D7 RLA    __ctypeidx                0014E2 RLA    
+__DESTRUCTOR_TABLE__      0015BC RLA    _stdout                   0015D6 RLA    
+fdtab                     001606 RLA    initlib                   001620 RLA    
+__BSS_RUN__               001620 RLA    __ONCE_RUN__              001620 RLA    
+__oserror                 001620 RLA    initstdout                001647  LAI   
+__errno                   00164C RLA    __CONSTRUCTOR_TABLE__     001658 RLA    
+__MAIN_SIZE__             0096F3 REA    __HIMEM__                 009F00 REA    
+READST                    00FFB7 RLA    SETLFS                    00FFBA RLA    
+OPEN                      00FFC0 RLA    CKOUT                     00FFC9 RLA    
+CLRCH                     00FFCC RLA    BSOUT                     00FFD2 RLA    
+CHROUT                    00FFD2 RLA    
+
+
+Imports list:
+-------------
+BSOUT (kernal.o):
+    write.o                   cbm/cbm.inc:49
+CHROUT (kernal.o):
+    crt0.o                    cx16/crt0.s:10
+CKOUT (kernal.o):
+    write.o                   cbm/cbm.inc:45
+CLRCH (kernal.o):
+    write.o                   cbm/cbm.inc:46
+OPEN (kernal.o):
+    write.o                   cbm/cbm.inc:35
+READST (kernal.o):
+    write.o                   cbm/cbm.inc:32
+SETLFS (kernal.o):
+    write.o                   cbm/cbm.inc:33
+__BSS_RUN__ ([linker generated]):
+    zerobss.o                 common/zerobss.s:8
+__BSS_SIZE__ ([linker generated]):
+    zerobss.o                 common/zerobss.s:8
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s:18
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s:18
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s:19
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s:19
+__EXEHDR__ (exehdr.o):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:6
+__HEADER_LAST__ ([linker generated]):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:14
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:14
+__HIMEM__ ([linker generated]):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:15
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:14
+__LOADADDR__ (loadaddr.o):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:5
+__MAIN_SIZE__ ([linker generated]):
+    crt0.o                    cx16/crt0.s:11
+__MAIN_START__ ([linker generated]):
+    crt0.o                    cx16/crt0.s:11
+__ONCE_RUN__ ([linker generated]):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:15
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:15
+__STACKSIZE__ ([linker generated]):
+    [linker generated]        /Users/rje/git/cc65/cfg/cx16.cfg:15
+__STARTUP__ (crt0.o):
+    main.o                    main.s:13
+__ctype (ctype.o):
+    ctypemask.o               common/ctypemask.s:23
+__ctypeidx (ctype.o):
+    ctypemask.o               common/ctypemask.s:24
+__directerrno (_directerrno.o):
+    write.o                   /Users/rje/git/cc65/asminc/errno.inc:10
+__errno (errno.o):
+    _seterrno.o               /Users/rje/git/cc65/asminc/errno.inc:7
+__hextab (_hextab.o):
+    ltoa.o                    common/ltoa.s:10
+__longminstr (_longminstr.o):
+    ltoa.o                    common/ltoa.s:10
+__mappederrno (_mappederrno.o):
+    write.o                   /Users/rje/git/cc65/asminc/errno.inc:10
+__oserror (_oserror.o):
+    _mappederrno.o            /Users/rje/git/cc65/asminc/errno.inc:7
+    _directerrno.o            /Users/rje/git/cc65/asminc/errno.inc:7
+    write.o                   /Users/rje/git/cc65/asminc/errno.inc:7
+__osmaperrno (oserror.o):
+    _mappederrno.o            /Users/rje/git/cc65/asminc/errno.inc:8
+__printf (_printf.o):
+    vfprintf.o                common/vfprintf.s:10
+__seterrno (_seterrno.o):
+    _mappederrno.o            /Users/rje/git/cc65/asminc/errno.inc:9
+    _directerrno.o            /Users/rje/git/cc65/asminc/errno.inc:9
+    fwrite.o                  /Users/rje/git/cc65/asminc/errno.inc:9
+_fwrite (fwrite.o):
+    vfprintf.o                common/vfprintf.s:10
+_ltoa (ltoa.o):
+    _printf.o                 common/_printf.s:12
+_main (main.o):
+    callmain.o                runtime/callmain.s:11
+_printf (printf.o):
+    main.o                    main.s:14
+_stdout (_file.o):
+    printf.o                  common/printf.s:8
+_strlen (strlen.o):
+    _printf.o                 common/_printf.s:13
+_strlower (strlower.o):
+    _printf.o                 common/_printf.s:13
+_strncpy (strncpy.o):
+    main.o                    main.s:15
+_ultoa (ltoa.o):
+    _printf.o                 common/_printf.s:12
+_vfprintf (vfprintf.o):
+    printf.o                  common/printf.s:8
+_write (write.o):
+    fwrite.o                  common/fwrite.s:10
+addeqysp (addeqsp.o):
+    main.o                    main.s:401
+addysp (addysp.o):
+    incsp6.o                  runtime/incsp6.s:8
+    fwrite.o                  common/fwrite.s:11
+    printf.o                  common/printf.s:8
+    main.o                    main.s:401
+aslax1 (aslax1.o):
+    main.o                    main.s:401
+aslax4 (aslax4.o):
+    main.o                    main.s:401
+axlong (axlong.o):
+    _printf.o                 common/_printf.s:11
+axulong (axlong.o):
+    _printf.o                 common/_printf.s:11
+callmain (callmain.o):
+    crt0.o                    cx16/crt0.s:9
+ctypemaskdirect (ctypemask.o):
+    strlower.o                common/strlower.s:14
+decsp4 (decsp4.o):
+    lpush.o                   runtime/lpush.s:12
+decsp6 (decsp6.o):
+    _printf.o                 common/_printf.s:11
+donelib (condes.o):
+    crt0.o                    cx16/crt0.s:8
+fdtab (filedes.o):
+    write.o                   cbm/filedes.inc:7
+incax2 (incax2.o):
+    main.o                    main.s:401
+incax6 (incax6.o):
+    main.o                    main.s:401
+incaxy (incaxy.o):
+    incax6.o                  runtime/incax6.s:8
+incsp2 (incsp2.o):
+    popptr1.o                 runtime/popptr1.s:8
+    main.o                    main.s:401
+incsp6 (incsp6.o):
+    fwrite.o                  common/fwrite.s:11
+    vfprintf.o                common/vfprintf.s:9
+initlib (condes.o):
+    crt0.o                    cx16/crt0.s:8
+ldaxysp (ldaxsp.o):
+    fwrite.o                  common/fwrite.s:11
+    main.o                    main.s:401
+leaa0sp (leaaxsp.o):
+    main.o                    main.s:401
+mul8x16 (mul8.o):
+    mul.o                     runtime/mul.s:8
+mul8x16a (mul8.o):
+    mul.o                     runtime/mul.s:8
+mulax10 (mulax10.o):
+    main.o                    main.s:401
+negeax (lneg.o):
+    ltoa.o                    common/ltoa.s:9
+popax (incsp2.o):
+    rwcommon.o                cbm/rwcommon.s:9
+    ltoa.o                    common/ltoa.s:9
+    _printf.o                 common/_printf.s:11
+    strncpy.o                 common/strncpy.s:8
+popptr1 (popptr1.o):
+    rwcommon.o                cbm/rwcommon.s:9
+    udiv.o                    runtime/udiv.s:9
+    mul8.o                    runtime/mul8.s:9
+    mul.o                     runtime/mul.s:9
+    ltoa.o                    common/ltoa.s:9
+    strncpy.o                 common/strncpy.s:8
+ptr1 (zeropage.o):
+    write.o                   cbm/write.s:11
+    udiv.o                    runtime/udiv.s:10
+    strlower.o                common/strlower.s:13
+    popptr1.o                 runtime/popptr1.s:9
+    mul8.o                    runtime/mul8.s:10
+    mul.o                     runtime/mul.s:10
+    ltoa.o                    common/ltoa.s:11
+    fwrite.o                  common/fwrite.s:14
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:12
+    zerobss.o                 common/zerobss.s:9
+    vfprintf.o                common/vfprintf.s:11
+    strncpy.o                 common/strncpy.s:9
+    printf.o                  common/printf.s:9
+    mulax10.o                 runtime/mulax10.s:9
+    main.o                    main.s:11
+ptr2 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s:10
+    write.o                   cbm/write.s:11
+    strlower.o                common/strlower.s:13
+    strlen.o                  common/strlen.s:12
+    ltoa.o                    common/ltoa.s:11
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:12
+    strncpy.o                 common/strncpy.s:9
+ptr3 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s:10
+    write.o                   cbm/write.s:11
+    ltoa.o                    common/ltoa.s:11
+ptr4 (zeropage.o):
+    udiv.o                    runtime/udiv.s:10
+    mul8.o                    runtime/mul8.s:10
+    mul.o                     runtime/mul.s:10
+push0 (pushax.o):
+    main.o                    main.s:401
+push1 (push1.o):
+    _printf.o                 common/_printf.s:11
+    vfprintf.o                common/vfprintf.s:9
+pusha0 (pushax.o):
+    push1.o                   runtime/push1.s:8
+    main.o                    main.s:401
+pushax (pushax.o):
+    fwrite.o                  common/fwrite.s:11
+    callmain.o                runtime/callmain.s:11
+    _printf.o                 common/_printf.s:11
+    printf.o                  common/printf.s:8
+    main.o                    main.s:401
+    main.o                    main.s:401
+pusheax (lpush.o):
+    _printf.o                 common/_printf.s:11
+pushwysp (pushwsp.o):
+    fwrite.o                  common/fwrite.s:11
+    vfprintf.o                common/vfprintf.s:9
+    main.o                    main.s:401
+regbank (zeropage.o):
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:14
+rwcommon (rwcommon.o):
+    write.o                   cbm/write.s:10
+sp (zeropage.o):
+    decsp4.o                  runtime/decsp4.s:8
+    popptr1.o                 runtime/popptr1.s:9
+    lpush.o                   runtime/lpush.s:13
+    decsp6.o                  runtime/decsp6.s:8
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:11
+    vfprintf.o                common/vfprintf.s:11
+    subysp.o                  runtime/subysp.s:9
+    staxsp.o                  runtime/staxsp.s:8
+    pushwsp.o                 runtime/pushwsp.s:8
+    pushax.o                  runtime/pushax.s:8
+    printf.o                  common/printf.s:9
+    leaaxsp.o                 runtime/leaaxsp.s:8
+    ldaxsp.o                  runtime/ldaxsp.s:8
+    incsp2.o                  runtime/incsp2.s:8
+    crt0.o                    /Users/rje/git/cc65/asminc/zeropage.inc:11
+    addysp.o                  runtime/addysp.s:8
+    addeqsp.o                 runtime/addeqsp.s:8
+    main.o                    main.s:10
+sreg (zeropage.o):
+    lneg.o                    runtime/lneg.s:11
+    udiv.o                    runtime/udiv.s:10
+    ltoa.o                    common/ltoa.s:11
+    lpush.o                   runtime/lpush.s:13
+    axlong.o                  runtime/axlong.s:9
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:11
+staxysp (staxsp.o):
+    main.o                    main.s:401
+subysp (subysp.o):
+    main.o                    main.s:401
+tmp1 (zeropage.o):
+    mul.o                     runtime/mul.s:10
+    ltoa.o                    common/ltoa.s:11
+    _printf.o                 /Users/rje/git/cc65/asminc/zeropage.inc:13
+    strncpy.o                 common/strncpy.s:9
+    incaxy.o                  runtime/incaxy.s:8
+    aslax4.o                  runtime/aslax4.s:8
+    aslax1.o                  runtime/aslax1.s:8
+tmp2 (zeropage.o):
+    rwcommon.o                cbm/rwcommon.s:10
+    strncpy.o                 common/strncpy.s:9
+tmp3 (zeropage.o):
+    strncpy.o                 common/strncpy.s:9
+tosudivax (udiv.o):
+    fwrite.o                  common/fwrite.s:12
+tosumulax (mul.o):
+    fwrite.o                  common/fwrite.s:12
+zerobss (zerobss.o):
+    crt0.o                    cx16/crt0.s:9
+
