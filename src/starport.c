@@ -1,5 +1,5 @@
 #include "starport.h"
 
-void starport_trade() {
-	
+int starport_trade() {
+   return 0;	
 }

@@ -1,4 +1,4 @@
-SOURCES = main.c
+SOURCES = main.c menu.c
 
 PROGRAM = STUTIL
 CC65_TARGET = cx16

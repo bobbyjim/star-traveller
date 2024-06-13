@@ -2,6 +2,7 @@
 #include <conio.h>
 
 #include "command_menu.h"
+#include "menu.h"
 #include "gamestate.h"
 #include "starport.h"
 #include "ship.h"
@@ -23,37 +24,31 @@ void command_endTurn() {
 
 void command_menu() {
 	unsigned char choice;
-	unsigned char i;
+	unsigned char turns = 60;
 
-    clrscr();
-    printf("  %c", CORNER1);
-	for(i=0; i<20; ++i) cputc( HORIZ );
-	cputc(CORNER2);
-	printf("\n");
+    while(turns>0) {
 
-	printf("  %c                    %c\r\n", VERT, VERT );
-    printf("  %c 1 - trade          %c\r\n", VERT, VERT );
-	printf("  %c 2 - travel         %c\r\n", VERT, VERT );
-	printf("  %c 3 - upgrade        %c\r\n", VERT, VERT );
-	printf("  %c 4 - view missions  %c\r\n", VERT, VERT );
-	printf("  %c 5 - end turn       %c\r\n", VERT, VERT );
-	printf("  %c                    %c\r\n", VERT, VERT );
+      clrscr();
+      gotoxy(2,2);
+      menu_draw( 22, 12, "command menu" );
 
-    printf("  %c", CORNER3);
-	for(i=0; i<20; ++i) cputc( HORIZ );
-	cputc(CORNER4);
-	printf("\n");
+      cputsxy( 4,4, "1 - trade         " );
+      cputsxy( 4,6, "2 - astrogate     " );
+      cputsxy( 4,8, "3 - upgrade       " );
+      cputsxy( 4,10,"4 - view missions " );
+      cputsxy( 4,12,"5 - end turn      " );
+      
+      gotoxy(4,17);
+      printf("you have %d turns left", turns);
+      cputsxy( 4, 19, "enter your choice:");
 
-
-	printf("    enter your choice: ");
-	while(1) {
-		choice = cgetc();
-	    switch(choice) {
-		   case '1': starport_trade();   return;
-		   case '2': ship_travel();      return;
-		   case '3': shipyard_upgrade(); return;
-		   case '4': missions_view();    return;
-		   case '5': command_endTurn();  return;
-	    }
+      choice = cgetc();
+      switch(choice) {
+         case '1': turns -= starport_trade();   break;
+         case '2': turns -= ship_travel();      break;
+         case '3': turns -= shipyard_upgrade(); break;
+         case '4': turns -= missions_view();    break;
+         case '5': command_endTurn();  break;
+       }
 	}
 }

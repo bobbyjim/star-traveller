@@ -1,5 +1,6 @@
 #include "ship.h"
+#include "astrogation.h"
 
-void ship_travel() {
-	
+int ship_travel() {
+   return astrogation_menu();
 }

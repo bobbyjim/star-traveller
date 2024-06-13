@@ -29,13 +29,13 @@ typedef struct {
 	int  ar     :8;
 	int  cost   :8;
 	int  status :8;
-	int  row    :8;
 	int  col    :8;
+	int  row    :8;
 
 	CargoItem cargo[MAX_CARGO_ITEMS];
 
 } Ship;
 
-void ship_travel();
+int ship_travel();
 
 #endif

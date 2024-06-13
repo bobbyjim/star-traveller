@@ -1,6 +1,6 @@
 #ifndef _MISSIONS_H_
 #define _MISSIONS_H_
 
-void missions_view();
+int missions_view();
 
 #endif

@@ -1,5 +1,5 @@
 #include "missions.h"
 
-void missions_view() {
-	
+int missions_view() {
+	return 0;
 }

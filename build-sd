@@ -1,19 +1,16 @@
 img=star-traveller.img
-
 size=1
 units=M 
+
+rm $img
 dd if=/dev/zero of=$img bs=1$units count=$size
 mformat -i $img -F ::
 
 rm -rf BUILD/
 mkdir BUILD/
 
-cp src/boot.bas BUILD/
-cp src/STARTRAV BUILD/
-cp src/*.BIN BUILD/
-cp -r src/P/ BUILD/P/
+cp -r src/BOOT.PRG src/STARTRAV src/*.BIN src/P/ BUILD/
 mcopy -i $img -o -s -v -m BUILD/* ::
-
 
 
 #mpartition -i "$img|partition=1" -I ::

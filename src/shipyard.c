@@ -1,5 +1,5 @@
 #include "shipyard.h"
 
-void shipyard_upgrade() {
-	
+int shipyard_upgrade() {
+	return 0;
 }

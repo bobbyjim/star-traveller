@@ -27,7 +27,7 @@ foreach (<DATA>)
    my $engines = $j + ($m << 4);
    my $jfuel   = $f2 + ($f1 << 4);
    
-   print $out pack('A6a13x', $qsp1 . $m . $j, uc $name),
+   print $out pack('a5xa13x', $qsp1 . $m . $j, uc $name),
               pack('ca',   $tl, $builder),
 			  pack('cc',   $engines, $jfuel),
 			  pack('cccc', $cargo, $pass, $low, $ar),

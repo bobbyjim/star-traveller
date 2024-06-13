@@ -31,19 +31,42 @@ SOFTWARE.
 #include "player.h"
 #include "map.h"
 #include "menu.h"
+#include "ship.h"
+
+Ship playerShip = {
+    "abu11",
+    "beowulf",
+    10,
+    'B',
+    1,  // m
+    2,  // j
+    1,  // fuel capacity
+    2,  // fuel carried
+    82,
+    8,
+    10,
+    10,
+    50,
+    0,
+    19, // .col
+    10, // .row
+    { {0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}}
+};
 
 void main() {
    unsigned char choice; 
 
    set_PET_font();
+   textcolor(COLOR_WHITE);
    
    gamestate_load();
 
    while(1) {
         clrscr();
         gotox(67);
-        printf("%u k free\n", _heapmemavail());
+        printf("%u k free", _heapmemavail());
 
+        gotoxy(2,2);
         menu_draw( 43, 9, "starship command center" );
         //cputsxy(  2, 1, "starship command center" );
         cputsxy(  4, 5, "r - register   l - login   q - quit" );
