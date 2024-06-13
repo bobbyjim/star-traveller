@@ -1,6 +1,9 @@
 img=star-traveller.img
 
-cp ../sdcard.img star-traveller.img
+size=1
+units=M 
+dd if=/dev/zero of=$img bs=1$units count=$size
+mformat -i $img -F ::
 
 rm -rf BUILD/
 mkdir BUILD/
@@ -9,11 +12,10 @@ cp src/boot.bas BUILD/
 cp src/STARTRAV BUILD/
 cp src/*.BIN BUILD/
 cp -r src/P/ BUILD/P/
-mcopy -i $img@@1M -o -s -v -m BUILD/* ::
+mcopy -i $img -o -s -v -m BUILD/* ::
 
-#size=1
-#units=M 
-#dd if=/dev/zero of="$img" bs=1$units count=$size
+
+
 #mpartition -i "$img|partition=1" -I ::
 #mpartition -i "$img|partition=1" -c -b 2048 -T 0x0x ::
 #mformat -i "$img|partition=1" -F ::
