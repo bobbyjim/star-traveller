@@ -65,14 +65,18 @@ void setPetFont()
 
 void savePlayer(char* name, Player* player)
 {
-	FILE* file = fopen(name, "wb");
+	FILE* file;
+    strcat(name, ".p");
+	file = fopen(name, "wb");
 	fwrite(player, sizeof(Player), 1, file);
 	fclose(file);
 }
 
 void loadPlayer(char* name, Player* player)
 {
-	FILE* file = fopen(name, "rb");
+	FILE* file;
+    strcat(name, ".p");
+	file = fopen(name, "rb");
 	fread(player, sizeof(Player), 1, file);
 	fclose(file);
 }
@@ -80,7 +84,7 @@ void loadPlayer(char* name, Player* player)
 void newPlayerRegister() 
 {
 	int i;
-	char name[15];
+	char name[16];
 	Player player;
 
 	clrscr();
@@ -120,12 +124,13 @@ void newPlayerRegister()
 
 void playerLogin()
 {
-	char name[15];
-    FILE* file = fopen("active", "wb");
+	char name[16];
+    FILE* file = fopen("active.p", "wb");
 
 	clrscr();
 	printf("\n  enter player name: ");
 	scanf("%s", name);
+
 	fwrite(name, strlen(name), 1, file);
 	fclose(file);
 	printf("\n  %s is set active\n", name);
