@@ -8,6 +8,8 @@
 #include "ship.h"
 #include "shipyard.h"
 #include "missions.h"
+#include "astrogation.h"
+#include "player.h"
 
 #define		CORNER1		213
 #define		CORNER2		201
@@ -16,6 +18,8 @@
 #define		HORIZ		192
 #define		VERT		221
 
+extern Player player;
+
 void command_endTurn() {
 	gamestate_nextTurn();
 	gamestate_save();
@@ -23,8 +27,8 @@ void command_endTurn() {
 }
 
 void command_menu() {
-	unsigned char choice;
-	unsigned char turns = 60;
+    unsigned char choice;
+    unsigned char turns = 60;
 
     while(turns>0) {
 
@@ -38,9 +42,10 @@ void command_menu() {
       cputsxy( 4,10,"4 - view missions " );
       cputsxy( 4,12,"5 - end turn      " );
       
-      gotoxy(4,17);
-      printf("you have %d turns left", turns);
-      cputsxy( 4, 19, "enter your choice:");
+      gotoxy(0,17);
+      astrogation_print_current();
+      printf("\n\n    you have %d turns left", turns);
+      printf("\n\n    enter your choice: ");
 
       choice = cgetc();
       switch(choice) {

@@ -10,5 +10,6 @@ int distance( int col1, int row1,
 
 int astrogation_menu();
 int astrogation_fetch( MAP1* world, int col, int row );
+void astrogation_print_current();
 
 #endif

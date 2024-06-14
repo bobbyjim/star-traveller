@@ -10,7 +10,6 @@
 #include "player.h"
 
 extern Player player;
-Ship playerShip;
 
 int astrogation_fetch( MAP1* world, int col, int row )
 {
@@ -58,15 +57,19 @@ int distance( int col1, int row1,
    return d;
 }
 
+void astrogation_print_current()
+{
+	MAP1 current;
+    astrogation_fetch( &current, player.col, player.row);
+	printf("    current world: (%02d%02d) %s", player.col, player.row, current.name );
+}
+
 int astrogation_menu()
 {
 	int i,j;
 	int hex;
 	int d;
 	int pos;
-	MAP1 current;
-
-	playerShip = player.ship;
 
 	clrscr();
 	gotoxy(1,1);
@@ -74,16 +77,16 @@ int astrogation_menu()
 	gotoxy(2,4);
 
     pos = 0;
-    for(i=playerShip.col - playerShip.j; i<=playerShip.col + playerShip.j; ++i)
-	   for(j=playerShip.row - playerShip.j; j<=playerShip.row + playerShip.j; ++j)
+    for(i=player.ship.col - player.ship.j; i<=player.ship.col + player.ship.j; ++i)
+	   for(j=player.ship.row - player.ship.j; j<=player.ship.row + player.ship.j; ++j)
 	   {
-		  d=distance(i,j,playerShip.col,playerShip.row,playerShip.j,playerShip.j); // used to care about jump_fuel_carried but no longer
+		  d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j); // used to care about jump_fuel_carried but no longer
 		  
 		  if (d > 0) { 
-			  if (pos < 28) {
+			  if (pos < 20) {
 		          MAP1 world;
 				  if (astrogation_fetch(&world, i, j)) {
-					 gotoxy(4 + (pos/7), 4 + (pos%7)*2);
+					 gotoxy(4 + (pos/7)*24, 4 + (pos%7)*2);
 					 cprintf(" %02u%02u ", i, j);
 					 textcolor(COLOR_LIGHTGREEN);
 					 cprintf("(%d)", d);
@@ -99,26 +102,27 @@ int astrogation_menu()
 
     gotoxy(0,25);
 
-    astrogation_fetch( &current, playerShip.col, playerShip.row);
-	printf("  current world: %s\n", current.name );
+    astrogation_print_current();
 
 	d=0;
 	while(d==0) {
-	   printf( "  enter destination hex: ");
+	   printf( "\n\n  enter destination hex: ");
 	   scanf("%d", &hex);
 
 	   if (hex == 0) return 0;
 
 	   i = hex / 100;
 	   j = hex % 100;
-	   if ( (d=distance(i,j,playerShip.col,playerShip.row,playerShip.j,playerShip.j)) == 0) { // used to care about jump_fuel_carried but no longer
+	   if ( (d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j)) == 0) { // used to care about jump_fuel_carried but no longer
 		   printf("\n  (%02d%02d) invalid destination!\n\n", i, j );
 	   }
 	   else {
-          // move the ship
-		  playerShip.col = i;
-		  playerShip.row = i;
-		  //playerShip.jump_fuel_carried -= d;  don't care
+          // move player and ship
+		  player.col = i;
+		  player.row = j;
+		  player.ship.col = i;
+		  player.ship.row = j;
+		  //player.ship.jump_fuel_carried -= d;  don't care
 	   }
 	}
 
