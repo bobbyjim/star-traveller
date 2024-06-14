@@ -25,7 +25,7 @@ typedef struct {
 	int  jump_fuel_carried  :4;
 	int  cargo_hold :8;
 	int  passengers :8;
-	int  lowBerths  :8;
+	int  low_berths :8;
 	int  ar     :8;
 	int  cost   :8;
 	int  status :8;

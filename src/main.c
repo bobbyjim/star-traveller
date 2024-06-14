@@ -33,6 +33,8 @@ SOFTWARE.
 #include "menu.h"
 #include "ship.h"
 
+Player player;
+/*
 Ship playerShip = {
     "abu11",
     "beowulf",
@@ -52,7 +54,7 @@ Ship playerShip = {
     10, // .row
     { {0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}}
 };
-
+*/
 void main() {
    unsigned char choice; 
 
@@ -60,6 +62,7 @@ void main() {
    textcolor(COLOR_WHITE);
    
    gamestate_load();
+   player_loadActive(&player);
 
    while(1) {
         clrscr();
@@ -67,6 +70,8 @@ void main() {
         printf("%u k free", _heapmemavail());
 
         gotoxy(2,2);
+        command_menu();
+/*
         menu_draw( 43, 9, "starship command center" );
         cputsxy(  4, 5, "r - register   l - login   q - quit" );
         cputsxy(  4, 8, "your choice:");
@@ -90,6 +95,7 @@ void main() {
             //default:
                 //printf("Invalid choice. Try again.\n");
         }
-    }              
+*/
+    }    
 }
 

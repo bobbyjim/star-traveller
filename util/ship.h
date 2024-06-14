@@ -25,18 +25,12 @@ typedef struct {
 	int  jump_fuel_carried  :4;		// 4 bits actual fuel carried
 	int  cargo_hold :8;				// 1b cargo capacity
 	int  passengers :8;				// 1b passenger capacity
-	int  lowBerths  :8;				// 1b low berths
+	int  low_berths :8;				// 1b low berths
 	int  ar     :8;					// 1b armor rating
 	int  cost   :8;					// 1b cost in 10 MCr units
 	int  status :8;					// status (in starport, in shipyard, at GG, at belt, etc)
 	int  col    :8;					// hex map col
 	int  row    :8;					// hex map row
-
-	int  status_m          :2;
-	int  status_j          :2;
-	int  status_armor      :2;
-	int  status_cargo_hold :2;
-	int  status_fuel       :2;
 	
 	CargoItem cargo[MAX_CARGO_ITEMS];
 

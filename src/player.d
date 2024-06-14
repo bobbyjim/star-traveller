@@ -1,4 +1,4 @@
-.obj/player.o:	player.c player.h
+.obj/player.o:	player.c player.h ship.h
 
-player.c player.h:
+player.c player.h ship.h:
 

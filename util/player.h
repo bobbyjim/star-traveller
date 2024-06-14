@@ -8,11 +8,9 @@ typedef struct {
 	unsigned long kilocredits;
 	int           col: 8;
 	int           row: 8;
+	int			  turns_left: 8;
 	// additional player-specific attribs
 	Ship 		  ship;
 } Player;
-
-void player_register();
-unsigned char player_login();
 
 #endif
