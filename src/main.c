@@ -68,7 +68,6 @@ void main() {
 
         gotoxy(2,2);
         menu_draw( 43, 9, "starship command center" );
-        //cputsxy(  2, 1, "starship command center" );
         cputsxy(  4, 5, "r - register   l - login   q - quit" );
         cputsxy(  4, 8, "your choice:");
         choice = cgetc();

@@ -1,4 +1,4 @@
-.obj/main.o:	main.c ship.h emplacement.h menu.h
+.obj/main.o:	main.c splash.h ship.h emplacement.h menu.h player.h
 
-main.c ship.h emplacement.h menu.h:
+main.c splash.h ship.h emplacement.h menu.h player.h:
 
