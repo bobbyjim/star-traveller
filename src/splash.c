@@ -6,7 +6,7 @@ void splash(char* name)
 {
    textcolor(COLOR_YELLOW);
    gotoxy(18,10);
-   cputs("www.travellermap.com/api/poster?sector=spin");
+   cputs("www.travellermap.com/?p=-95!70!8");
 
    sleep(1);
 

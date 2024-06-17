@@ -32,7 +32,7 @@ shipyard.o:
     CODE              Offs=00099A  Size=000004  Align=00001  Fill=0000
 splash.o:
     CODE              Offs=00099E  Size=000097  Align=00001  Fill=0000
-    RODATA            Offs=0001CD  Size=0001C2  Align=00001  Fill=0000
+    RODATA            Offs=0001CD  Size=0001B7  Align=00001  Fill=0000
 starport.o:
     CODE              Offs=000A35  Size=000004  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_cursor.o):
@@ -52,9 +52,9 @@ starport.o:
 /Users/rje/git/cc65/lib/cx16.lib(_heapmemavail.o):
     CODE              Offs=000ADA  Size=00004E  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_hextab.o):
-    RODATA            Offs=00038F  Size=000010  Align=00001  Fill=0000
+    RODATA            Offs=000384  Size=000010  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_longminstr.o):
-    RODATA            Offs=00039F  Size=00000C  Align=00001  Fill=0000
+    RODATA            Offs=000394  Size=00000C  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_mappederrno.o):
     CODE              Offs=000B28  Size=00000F  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_oserror.o):
@@ -65,7 +65,7 @@ starport.o:
     DATA              Offs=000028  Size=000003  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_scanf.o):
     CODE              Offs=000EDC  Size=00075C  Align=00001  Fill=0000
-    RODATA            Offs=0003AB  Size=000010  Align=00001  Fill=0000
+    RODATA            Offs=0003A0  Size=000010  Align=00001  Fill=0000
     BSS               Offs=000191  Size=000042  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(_seterrno.o):
     CODE              Offs=001638  Size=000009  Align=00001  Fill=0000
@@ -109,7 +109,7 @@ starport.o:
     BSS               Offs=0001D3  Size=000001  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(cputc.o):
     CODE              Offs=00182E  Size=000062  Align=00001  Fill=0000
-    RODATA            Offs=0003BB  Size=000008  Align=00001  Fill=0000
+    RODATA            Offs=0003B0  Size=000008  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(cputs.o):
     CODE              Offs=001890  Size=000023  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(crt0.o):
@@ -117,7 +117,7 @@ starport.o:
     ONCE              Offs=00001C  Size=00001B  Align=00001  Fill=0000
     INIT              Offs=000000  Size=000002  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(ctype.o):
-    RODATA            Offs=0003C3  Size=00008B  Align=00001  Fill=0000
+    RODATA            Offs=0003B8  Size=00008B  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(ctypemask.o):
     CODE              Offs=0018B3  Size=00001E  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(decaxy.o):
@@ -250,7 +250,7 @@ starport.o:
     CODE              Offs=0020EA  Size=0000BE  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(oserror.o):
     CODE              Offs=0021A8  Size=000016  Align=00001  Fill=0000
-    RODATA            Offs=00044E  Size=00005A  Align=00001  Fill=0000
+    RODATA            Offs=000443  Size=00005A  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(popa.o):
     CODE              Offs=0021BE  Size=00000A  Align=00001  Fill=0000
 /Users/rje/git/cc65/lib/cx16.lib(popptr1.o):
@@ -336,11 +336,11 @@ LOADADDR              0007FF  000800  000002  00001
 EXEHDR                000801  00080C  00000C  00001
 STARTUP               00080D  00082D  000021  00001
 CODE                  00082E  002E97  00266A  00001
-RODATA                002E98  003343  0004AC  00001
-DATA                  003344  0033E5  0000A2  00001
-INIT                  0033E6  0033E8  000003  00001
-BSS                   0033E9  0035E1  0001F9  00001
-ONCE                  0033E9  003454  00006C  00001
+RODATA                002E98  003338  0004A1  00001
+DATA                  003339  0033DA  0000A2  00001
+INIT                  0033DB  0033DD  000003  00001
+BSS                   0033DE  0035D6  0001F9  00001
+ONCE                  0033DE  003449  00006C  00001
 
 
 Exports list by name:
@@ -353,22 +353,22 @@ KBDBUF_PEEK               00FEBD RLA    OPEN                      00FFC0 RLA
 PLOT                      00FFF0 RLA    RDTIM                     00FFDE RLA    
 READST                    00FFB7 RLA    SETLFS                    00FFBA RLA    
 SETNAM                    00FFBD RLA    SETTIM                    00FFDB RLA    
-__BSS_RUN__               0033E9 RLA    __BSS_SIZE__              0001F9 REA    
-__CONSTRUCTOR_COUNT__     000005 REA    __CONSTRUCTOR_TABLE__     00344B RLA    
-__DESTRUCTOR_COUNT__      000002 REA    __DESTRUCTOR_TABLE__      003340 RLA    
+__BSS_RUN__               0033DE RLA    __BSS_SIZE__              0001F9 REA    
+__CONSTRUCTOR_COUNT__     000005 REA    __CONSTRUCTOR_TABLE__     003440 RLA    
+__DESTRUCTOR_COUNT__      000002 REA    __DESTRUCTOR_TABLE__      003335 RLA    
 __EXEHDR__                000001 REA    __HEADER_LAST__           00080D RLA    
 __HIMEM__                 009F00 REA    __LOADADDR__              000001 REA    
 __MAIN_SIZE__             0096F3 REA    __MAIN_START__            00080D RLA    
-__ONCE_RUN__              0033E9 RLA    __STACKSIZE__             000800 REA    
-__STARTUP__               000001 REA    __ctype                   00325B RLA    
-__ctypeidx                003266 RLA    __directerrno             001267 RLA    
-__errno                   0035D4 RLA    __fdesc                   001270 RLA    
-__filetab                 003344 RLA    __filetype                0033CC RLA    
-__fopen                   00128D RLA    __heapend                 003366 RLA    
-__heapfirst               003368 RLA    __heapmemavail            001308 RLA    
-__heapptr                 003364 RLA    __hextab                  003227 RLA    
-__longminstr              003237 RLA    __mappederrno             001356 RLA    
-__oserror                 00354E RLA    __osmaperrno              0029D6 RLA    
+__ONCE_RUN__              0033DE RLA    __STACKSIZE__             000800 REA    
+__STARTUP__               000001 REA    __ctype                   003250 RLA    
+__ctypeidx                00325B RLA    __directerrno             001267 RLA    
+__errno                   0035C9 RLA    __fdesc                   001270 RLA    
+__filetab                 003339 RLA    __filetype                0033C1 RLA    
+__fopen                   00128D RLA    __heapend                 00335B RLA    
+__heapfirst               00335D RLA    __heapmemavail            001308 RLA    
+__heapptr                 003359 RLA    __hextab                  00321C RLA    
+__longminstr              00322C RLA    __mappederrno             001356 RLA    
+__oserror                 003543 RLA    __osmaperrno              0029D6 RLA    
 __printf                  001458 RLA    __scanf                   00170A RLA    
 __seterrno                001E66 RLA    __setjmp                  002B84 RLA    
 __sys                     001E6F RLA    _abs                      002906 RLA    
@@ -391,14 +391,14 @@ _isxdigit                 0025DA RLA    _kbhit                    0025E2 RLA
 _longjmp                  0026F8 RLA    _ltoa                     00277A RLA    
 _main                     00082E RLA    _memcpy                   002821 RLA    
 _menu_draw                000FAF RLA    _missions_view            00112E RLA    
-_open                     00292C RLA    _player                   0033E9 RLA    
+_open                     00292C RLA    _player                   0033DE RLA    
 _player_loadActive        001132 RLA    _player_save              001192 RLA    
 _printf                   002A04 RLA    _read                     002A88 RLA    
 _scanf                    002B38 RLA    _set_PET_font             000EEE RLA    
 _ship_travel              0011C5 RLA    _shipyard_upgrade         0011C8 RLA    
 _sleep                    002BD1 RLA    _splash                   0011CC RLA    
-_starport_trade           001263 RLA    _stdin                    00335C RLA    
-_stdout                   00335E RLA    _strlen                   002C1F RLA    
+_starport_trade           001263 RLA    _stdin                    003351 RLA    
+_stdout                   003353 RLA    _strlen                   002C1F RLA    
 _strlower                 002C35 RLA    _textcolor                001FF3 RLA    
 _tolower                  002C7D RLA    _ultoa                    0027B9 RLA    
 _ungetc                   002CDE RLA    _vcprintf                 002D54 RLA    
@@ -412,24 +412,24 @@ boolge                    00280C RLA    callmain                  001F08 RLA
 chlinechar                000040 REZ    closeallfiles             002918  LAI   
 closecmdchannel           00216E RLA    complax                   00201D RLA    
 cputdirect                002074 RLA    ctypemask                 0020E1 RLA    
-ctypemaskdirect           0020E5 RLA    cursor                    00354B RLA    
-curunit                   0033E8 RLA    decaxy                    0020FF RLA    
+ctypemaskdirect           0020E5 RLA    cursor                    003540 RLA    
+curunit                   0033DD RLA    decaxy                    0020FF RLA    
 decsp1                    002108 RLA    decsp2                    002111 RLA    
 decsp4                    00211E RLA    decsp6                    00212B RLA    
-donelib                   002026 RLA    fdtab                     003398 RLA    
-fnaddmode                 002354 RLA    fncmd                     0033A8 RLA    
-fncomplete                00234C RLA    fnisfile                  0035D8 RLA    
-fnlen                     0035D7 RLA    fnparse                   0022E0 RLA    
-fnset                     002342 RLA    fnunit                    0035D6 RLA    
+donelib                   002026 RLA    fdtab                     00338D RLA    
+fnaddmode                 002354 RLA    fncmd                     00339D RLA    
+fncomplete                00234C RLA    fnisfile                  0035CD RLA    
+fnlen                     0035CC RLA    fnparse                   0022E0 RLA    
+fnset                     002342 RLA    fnunit                    0035CB RLA    
 freefd                    0022B7 RLA    gotoxy                    002547 RLA    
 incax3                    00258A RLA    incaxy                    002591 RLA    
 incsp1                    00259A RLA    incsp2                    0025A8 RLA    
 incsp3                    0025B6 RLA    incsp4                    0025BB RLA    
 incsp6                    0025C0 RLA    incsp8                    0025C5 RLA    
-initclock                 001F9B  LAI   initcurunit               003420  LAI   
-initheap                  0033E9  LAI   initlib                   0033F9 RLA    
-initstdin                 00342E  LAI   initstdout                00343A  LAI   
-jmpvec                    0033CD RLA    ldax0sp                   002653 RLA    
+initclock                 001F9B  LAI   initcurunit               003415  LAI   
+initheap                  0033DE  LAI   initlib                   0033EE RLA    
+initstdin                 003423  LAI   initstdout                00342F  LAI   
+jmpvec                    0033C2 RLA    ldax0sp                   002653 RLA    
 ldaxi                     002646 RLA    ldaxysp                   002655 RLA    
 ldeax0sp                  00265C RLA    leaa0sp                   00266F RLA    
 mul8x16                   0028B5 RLA    mul8x16a                  0028BF RLA    
@@ -459,7 +459,7 @@ tosmula0                  0028B3 RLA    tosmuleax                 002685 RLA
 tossuba0                  002C5C RLA    tossubax                  002C5E RLA    
 tossubeax                 002742 RLA    tosudivax                 002C91 RLA    
 tosumul0ax                002681 RLA    tosumulax                 00286E RLA    
-udiv16                    002CA0 RLA    unittab                   0033A0 RLA    
+udiv16                    002CA0 RLA    unittab                   003395 RLA    
 updatedevnum              002365  LAI   writefndiskcmd            0021C1 RLA    
 zerobss                   002E75 RLA    
 
@@ -557,22 +557,22 @@ _ungetc                   002CDE RLA    _vcprintf                 002D54 RLA
 _vfprintf                 002DBB RLA    _vfscanf                  002DE4 RLA    
 _wherex                   002E17 RLA    _wherey                   002E1D RLA    
 _write                    002E23 RLA    zerobss                   002E75 RLA    
-__hextab                  003227 RLA    __longminstr              003237 RLA    
-__ctype                   00325B RLA    __ctypeidx                003266 RLA    
-__DESTRUCTOR_TABLE__      003340 RLA    __filetab                 003344 RLA    
-_stdin                    00335C RLA    _stdout                   00335E RLA    
-__heapptr                 003364 RLA    __heapend                 003366 RLA    
-__heapfirst               003368 RLA    fdtab                     003398 RLA    
-unittab                   0033A0 RLA    fncmd                     0033A8 RLA    
-__filetype                0033CC RLA    jmpvec                    0033CD RLA    
-curunit                   0033E8 RLA    initheap                  0033E9  LAI   
-__ONCE_RUN__              0033E9 RLA    __BSS_RUN__               0033E9 RLA    
-_player                   0033E9 RLA    initlib                   0033F9 RLA    
-initcurunit               003420  LAI   initstdin                 00342E  LAI   
-initstdout                00343A  LAI   __CONSTRUCTOR_TABLE__     00344B RLA    
-cursor                    00354B RLA    __oserror                 00354E RLA    
-__errno                   0035D4 RLA    fnunit                    0035D6 RLA    
-fnlen                     0035D7 RLA    fnisfile                  0035D8 RLA    
+__hextab                  00321C RLA    __longminstr              00322C RLA    
+__ctype                   003250 RLA    __ctypeidx                00325B RLA    
+__DESTRUCTOR_TABLE__      003335 RLA    __filetab                 003339 RLA    
+_stdin                    003351 RLA    _stdout                   003353 RLA    
+__heapptr                 003359 RLA    __heapend                 00335B RLA    
+__heapfirst               00335D RLA    fdtab                     00338D RLA    
+unittab                   003395 RLA    fncmd                     00339D RLA    
+__filetype                0033C1 RLA    jmpvec                    0033C2 RLA    
+curunit                   0033DD RLA    initheap                  0033DE  LAI   
+__ONCE_RUN__              0033DE RLA    __BSS_RUN__               0033DE RLA    
+_player                   0033DE RLA    initlib                   0033EE RLA    
+initcurunit               003415  LAI   initstdin                 003423  LAI   
+initstdout                00342F  LAI   __CONSTRUCTOR_TABLE__     003440 RLA    
+cursor                    003540 RLA    __oserror                 003543 RLA    
+__errno                   0035C9 RLA    fnunit                    0035CB RLA    
+fnlen                     0035CC RLA    fnisfile                  0035CD RLA    
 __MAIN_SIZE__             0096F3 REA    __HIMEM__                 009F00 REA    
 KBDBUF_PEEK               00FEBD RLA    READST                    00FFB7 RLA    
 SETLFS                    00FFBA RLA    SETNAM                    00FFBD RLA    
