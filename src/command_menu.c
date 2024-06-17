@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 
 #include "command_menu.h"
 #include "menu.h"
@@ -20,40 +21,65 @@
 
 extern Player player;
 
-void command_endTurn() {
+void command_endTurn() 
+{
 	gamestate_nextTurn();
 	gamestate_save();
 	printf("turn ended. next player, please log in.\n");
 }
 
 void command_menu() {
-    unsigned char choice;
-    unsigned char turns = 60;
+    int choice;
 
-    while(turns>0) {
+    while(player.turns_left>0) {
 
       clrscr();
+
+      textcolor(COLOR_GRAY3);
+      gotoxy(67, 59);
+      printf("%u k free", _heapmemavail());
+
+      //gotoxy(4, 20);
+      //textcolor(COLOR_LIGHTBLUE);
+      //printf("hexes in range:\n\n    ");
+      //astrogation_show_range();
+
       gotoxy(2,2);
-      menu_draw( 22, 12, "command menu" );
-
-      cputsxy( 4,4, "1 - trade         " );
-      cputsxy( 4,6, "2 - astrogate     " );
-      cputsxy( 4,8, "3 - upgrade       " );
-      cputsxy( 4,10,"4 - view missions " );
-      cputsxy( 4,12,"5 - end turn      " );
+      textcolor(COLOR_WHITE);
+      menu_draw( 35, 14, "command menu" );
+      cputsxy( 4,4, "1    - trade         " );
+      cputsxy( 4,6, "2    - astrogate     " );
+      cputsxy( 4,8, "3    - upgrade       " );
+      cputsxy( 4,10,"4    - view missions " );
+      cputsxy( 4,12,"5    - end turn      " );
+      cputsxy( 4,14,"xxxx - jump to hex   " );
       
-      gotoxy(0,17);
+      gotoxy(42,3);
       astrogation_print_current();
-      printf("\n\n    you have %d turns left", turns);
-      printf("\n\n    enter your choice: ");
-
-      choice = cgetc();
+      gotoxy(42,5);
+      printf("you have %d turns left", player.turns_left);
+      gotoxy(42,12);
+      printf("enter your choice: ");
+      scanf("%d", &choice);
+      
       switch(choice) {
-         case '1': turns -= starport_trade();   break;
-         case '2': turns -= ship_travel();      break;
-         case '3': turns -= shipyard_upgrade(); break;
-         case '4': turns -= missions_view();    break;
-         case '5': command_endTurn();  break;
+         case 1: player.turns_left -= starport_trade();   break;
+         case 2: player.turns_left -= ship_travel();      break;
+         case 3: player.turns_left -= shipyard_upgrade(); break;
+         case 4: player.turns_left -= missions_view();    break;
+         case 5: command_endTurn();  break;
+         default:
+            if (choice > 100) // a hex code
+            {
+               printf("\n");
+               gotox(45);
+               printf("jump to hex %04d? ", choice);
+               if (cgetc() == 'y')
+               {
+                  astrogation_attempt_jump_to(choice);
+               }
+            }
        }
+       player_save();
 	}
 }

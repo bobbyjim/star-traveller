@@ -61,8 +61,29 @@ void astrogation_print_current()
 {
 	MAP1 current;
     astrogation_fetch( &current, player.col, player.row);
-	printf("    current world: (%02d%02d) %s", player.col, player.row, current.name );
+	printf("current world: (%02d%02d) %s", player.col, player.row, current.name );
 }
+
+// void astrogation_show_range()
+// {
+//    int i,j;
+//    MAP1 world;
+
+//    int k=0;
+
+//    for(i=player.ship.col - player.ship.j; i<=player.ship.col + player.ship.j; ++i)
+//       for(j=player.ship.row - player.ship.j; j<=player.ship.row + player.ship.j; ++j)
+//       {
+//          int d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j);
+//          if (d > 0)
+// 			if (astrogation_fetch(&world, i, j)) 
+// 			{
+// 			   printf("%02d%02d ", world.col, world.row);
+// 			   if (k % 10 == 9) printf("\n    ");
+// 			   ++k;
+// 			}
+// 	  }
+// }
 
 int astrogation_menu()
 {
@@ -100,31 +121,34 @@ int astrogation_menu()
 		  }
 	   }
 
-    gotoxy(0,25);
-
+    gotoxy(2,25);
     astrogation_print_current();
 
 	d=0;
 	while(d==0) {
 	   printf( "\n\n  enter destination hex: ");
 	   scanf("%d", &hex);
-
 	   if (hex == 0) return 0;
-
-	   i = hex / 100;
-	   j = hex % 100;
-	   if ( (d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j)) == 0) { // used to care about jump_fuel_carried but no longer
-		   printf("\n  (%02d%02d) invalid destination!\n\n", i, j );
-	   }
-	   else {
-          // move player and ship
-		  player.col = i;
-		  player.row = j;
-		  player.ship.col = i;
-		  player.ship.row = j;
-		  //player.ship.jump_fuel_carried -= d;  don't care
-	   }
+	   d = astrogation_attempt_jump_to(hex);
 	}
+}
 
-	return 1;
+int astrogation_attempt_jump_to(int hex)
+{
+   int i = hex / 100;
+   int j = hex % 100;
+   int d = distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j);
+
+   if (d == 0) { // used to care about jump_fuel_carried but no longer
+      printf("\n  (%02d%02d) invalid destination!\n\n", i, j );
+   }
+   else {
+      // move player and ship
+      player.col = i;
+      player.row = j;
+      player.ship.col = i;
+      player.ship.row = j;
+    //player.ship.jump_fuel_carried -= d;  don't care
+   }
+   return d;
 }

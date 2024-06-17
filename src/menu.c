@@ -1,4 +1,6 @@
 #include <conio.h>
+#include <string.h>
+
 #include "menu.h"
 
 #define		CORNER1		213
@@ -29,5 +31,7 @@ void menu_draw(unsigned char width, unsigned char height, char* title)
 	cputcxy(x + width, y, CORNER2);
 	cputcxy(x, y + height, CORNER3);
 	cputcxy(x + width, y + height, CORNER4);
-	cputsxy(x + 2, y, title);
+	cputcxy(x + 2, y, ' ');
+	cputsxy(x + 3, y, title);
+	cputcxy(x + 3 + strlen(title), y, ' ');
 }

@@ -24,8 +24,10 @@ SOFTWARE.
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <unistd.h>
 
 #include "common.h"
+#include "splash.h"
 #include "gamestate.h"
 #include "command_menu.h"
 #include "player.h"
@@ -59,16 +61,18 @@ void main() {
    unsigned char choice; 
 
    set_PET_font();
-   textcolor(COLOR_WHITE);
-   
+
    gamestate_load();
-   player_loadActive(&player);
+   player_loadActive();
+   splash(player.name);
+   sleep(1);
+
+   textcolor(COLOR_YELLOW);
+   cputsxy(30,35, "press a key to begin");
+   cgetc();
 
    while(1) {
         clrscr();
-        gotox(67);
-        printf("%u k free", _heapmemavail());
-
         gotoxy(2,2);
         command_menu();
 /*

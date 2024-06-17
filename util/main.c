@@ -230,7 +230,7 @@ void main()
 {
     setPetFont();
 	textcolor(COLOR_GREEN);
-    login("star traveller", "2024-06-13");
+    login("star traveller administrative console", "2024-06-17");
 	clrscr();
     testData();
 	runUtils();

@@ -15,6 +15,7 @@ typedef struct {
 	Ship 		  ship;
 } Player;
 
-void player_loadActive(Player* player);
+void player_loadActive();
+void player_save();
 
 #endif

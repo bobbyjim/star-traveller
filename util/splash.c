@@ -1,6 +1,7 @@
 #include <6502.h>
 #include <cx16.h>
 #include <conio.h>
+#include <string.h>
 
 #include "splash.h"
 
@@ -46,23 +47,36 @@ void login(char *name, char *date)
 
    bgcolor(COLOR_BLACK);
    clrscr();
-   logo(2,8);
+   textcolor(COLOR_WHITE);
+   cputsxy(40-strlen(name)/2,1,name);
 
-   textcolor(5);
+   textcolor(COLOR_GREEN);
+   gotoxy(2,1);
+   cprintf("r%03d%c\r\n", version, proto);
 
-   gotoxy(0,2);
-   cprintf("  r%03d%c                             %s                               ",version,proto, name);
-   cputsxy(2,4,  "****************************************************************************");
-   cputsxy(9,7,  "not a warning!  all are welcome to access this system; there are no");
-   cputsxy(9,9, "penalties, nor any system security policy,  and no applicable state");
-   cputsxy(9,11, "or federal laws. sessions & e-mail are not monitored, as the system"); 
-   cputsxy(9,13, "has neither.     * * * note: system will be down if it is shut off.");
-   cputsxy(2,16, "****************************************************************************");
-   gotoxy(2,18);
+   gotoy(5);
+   cputs("   '##     '## '######## '##        '######   '#######  '##    '## '########   \r\n");
+   cputs("    ## '##  ##  ##.....   ##       '##... ## '##.... ##  ###  '###  ##.....    \r\n");
+   cputs("    ##  ##  ##  ##        ##        ##   ..   ##     ##  ####'####  ##         \r\n");
+   cputs("    ##  ##  ##  ######    ##        ##        ##     ##  ## ### ##  ######     \r\n");
+   cputs("    ##  ##  ##  ##...     ##        ##        ##     ##  ##. #  ##  ##...      \r\n");
+   cputs("    ##  ##  ##  ##        ##        ##    ##  ##     ##  ## .   ##  ##         \r\n");
+   cputs("   . ###. ###   ########  ######## . ######  . #######   ##     ##  ########   \r\n");
+   cputs("    ...  ...   ........  ........   ......    .......   ..     ..  ........    \r\n");
+   cputs("                                                                               \r\n\r\n");
+   cputs( "********************************************************************************\r\n\r\n");
+   cputs( "         not a warning!  all are welcome to access this system; there are no\r\n\r\n");
+   cputs( "         penalties, nor any system security policy,  and no applicable state\r\n\r\n");
+   cputs( "         or federal laws. sessions & e-mail are not monitored, as the system\r\n\r\n"); 
+   cputs( "         has neither.     * * * note: system will be down if it is shut off.\r\n\r\n\r\n");
+   cputs( "********************************************************************************\r\n");
    cprintf("                        commander x16 | %s", date);
 
-   textcolor(10);
-   cputsxy(2,25,"                    * * *   press a key to login   * * * ");
+   logo(2,19);
+
+
+   textcolor(COLOR_LIGHTRED);
+   cputsxy(22,40,"* * *   press a key to login   * * *");
    cgetc();
    cclearxy(2,25,70);
    textcolor(5);

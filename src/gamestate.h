@@ -3,13 +3,14 @@
 
 #include "player.h"
 
-#define	MAX_PLAYERS		255
+#define	MAX_PLAYERS		16
 
 typedef struct {
 
-	unsigned char currentTurn;
-	unsigned char historyTop;
-    //char playerNames[MAX_PLAYERS][15];
+	int currentTurn : 16;
+	int historyTop  : 7;
+	int junk        : 9;
+    char playerNames[MAX_PLAYERS][15];
 
 } GameState;
 

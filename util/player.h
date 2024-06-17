@@ -2,6 +2,7 @@
 #define _PLAYERS_H_
 
 #include "ship.h"
+#include "player.h"
 
 typedef struct {
 	char          name[15]; // 14 chars max name
@@ -9,8 +10,12 @@ typedef struct {
 	int           col: 8;
 	int           row: 8;
 	int			  turns_left: 8;
+
 	// additional player-specific attribs
 	Ship 		  ship;
 } Player;
+
+void player_loadActive();
+void player_save();
 
 #endif
