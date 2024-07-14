@@ -1,14 +1,8 @@
 #include <conio.h>
 #include <string.h>
 
+#include "common.h"
 #include "menu.h"
-
-#define		CORNER1		213
-#define		CORNER2		201
-#define		CORNER3		202
-#define		CORNER4		203
-#define		HORIZ		192
-#define		VERT		221
 
 void menu_draw(unsigned char width, unsigned char height, char* title)
 {

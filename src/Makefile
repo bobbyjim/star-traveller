@@ -1,4 +1,4 @@
-SOURCES = main.c astrogation.c command_menu.c common.c emplacement.c gamestate.c map.c menu.c missions.c player.c ship.c shipyard.c splash.c starport.c
+SOURCES = main.c astrogation.c command_menu.c common.c emplacement.c gamestate.c map.c menu.c missions.c player.c ship.c shipyard.c splash.c starport.c trade.c
 
 PROGRAM = STARTRAV
 CC65_TARGET = cx16

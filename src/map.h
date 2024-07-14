@@ -4,6 +4,11 @@
 
 typedef struct {
 
+    //
+	//  OK theoretically we really only need an 11 bit value for
+	//  sector position, but giving them 8 bits each lets us potentially
+	//  address several sectors, so...
+	//
 	int col 	     :8;
 	int row 	     :8;
 

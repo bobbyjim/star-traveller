@@ -1,9 +1,14 @@
 #include "history.h"
+#include "gamestate.h"
 
-void history_add(char* msg, unsigned char historyTop) {
-	
+extern GameState gameState;
+
+void history_add(char* msg) {
+	// current date = gameState.date
+	// history top  = gameState.historyTop
 }
 
 void history_show() {
-
+	//FILE* fp = fopen( "history.dat", "rb" );
+	// history top  = gameState.historyTop
 }

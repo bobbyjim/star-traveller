@@ -36,70 +36,30 @@ SOFTWARE.
 #include "ship.h"
 
 Player player;
-/*
-Ship playerShip = {
-    "abu11",
-    "beowulf",
-    10,
-    'B',
-    1,  // m
-    2,  // j
-    1,  // fuel capacity
-    2,  // fuel carried
-    82,
-    8,
-    10,
-    10,
-    50,
-    0,
-    19, // .col
-    10, // .row
-    { {0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0},{0,0,0}}
-};
-*/
-void main() {
-   unsigned char choice; 
 
+void logout() {
+    printf("player %s, your turns are up.\n\n", player.name);
+    puts("please allow another player to log in, if possible, before re-logging in.\n\n");
+    exit(0);
+}
+
+void main() {
    set_PET_font();
 
    gamestate_load();
-   player_loadActive();
+   if (player_loadActive())
+      logout();
+
    splash(player.name);
    sleep(1);
 
    textcolor(COLOR_YELLOW);
-   cputsxy(30,35, "press a key to begin");
+   cputsxy(30,20, "press a key to begin");
    cgetc();
+   clrscr();
+   _randomize();
 
    while(1) {
-        clrscr();
-        gotoxy(2,2);
         command_menu();
-/*
-        menu_draw( 43, 9, "starship command center" );
-        cputsxy(  4, 5, "r - register   l - login   q - quit" );
-        cputsxy(  4, 8, "your choice:");
-        choice = cgetc();
-
-        switch (choice) {
-            case 'R':
-            case 'r':
-                player_register();
-                break;
-            case 'L':
-            case 'l':
-                if (player_login()) {
-                    // Proceed to game menu for the logged-in player
-                    command_menu();
-                }
-                break;
-            case 'Q':
-            case 'q':
-                return;
-            //default:
-                //printf("Invalid choice. Try again.\n");
-        }
-*/
     }    
 }
-

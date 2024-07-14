@@ -1,16 +1,31 @@
+#include <cbm.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+
 #include "trade.h"
 
-//                         1 = source, -1 = sink, and 0 = neither.
-TradeGood tradeGoods[NUM_TRADE_GOODS] = {
-	// trade good         ag  as  de  fl  he  hi  ic  in  lo  na  ni  po  ri  va  wa
-	{ "consumables",    {  1, -1,  0, -1, -1,  0,  0,  0,  1, -1,  0,  1,  0, -1,  1}},
-    { "data",           {  0, -1,  0,  0,  0,  1,  1, -1,  0,  0,  0,  0,  1,  0,  0}},
-    { "entertainments", {  1,  0,  1, -1, -1,  1, -1,  0, -1,  0,  0, -1, -1,  0,  1}},
-    { "high-tech",      {  0, -1,  0, -1, -1,  1, -1,  1,  0,  0,  0,  0,  0, -1, -1}},
-    { "manufactureds",  { -1,  1,  1,  0,  1,  1,  0,  1, -1,  0, -1,  0, -1,  0,  0}},
-    { "novelties",      {  0,  0,  0,  1,  0,  1,  0,  1,  0,  0,  0,  0, -1,  0,  0}},
-    { "pharma",         {  1,  0,  1,  0,  0, -1,  0,  1,  0, -1, -1, -1, -1,  0,  1}},
-    { "raw materials",  {  0,  1,  1,  1,  0,  0,  1, -1,  1,  1,  1,  1,  0,  1,  0}},
-    { "samples",        {  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  0,  1,  1}},
-    { "scrap",          { -1,  1,  0,  0,  0,  1,  0, -1,  1,  0,  0,  1,  0,  0,  0}}	
-};
+#define TO_MAIN_RAM     0
+#define DEVICE_SDCARD   8
+
+CargoLot cargo[MAX_CARGO_LOTS];
+uint16_t freight_tonnage;
+
+// WorldState* worlds = ((WorldState*)(0xa000));
+
+// void saveWorldStates()
+// {
+// 	RAM_BANK = 4; // world bank
+//     cbm_save( "world.dat", DEVICE_SDCARD, (void*)0xa000, sizeof(WorldState)*NUM_WORLDS); // 7024 bytes
+// }
+
+// void loadWorldStates()
+// {
+//     RAM_BANK = 4; // world bank
+//     cbm_load( "world.dat", DEVICE_SDCARD, (void*)0xa000);
+// }
+
+void determineSpeculativeGood()
+{
+    int i = rand() % NUM_TRADE_GOODS;
+}

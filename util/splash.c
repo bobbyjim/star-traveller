@@ -66,20 +66,12 @@ void login(char *name, char *date)
    cputs("                                                                               \r\n\r\n");
    cputs( "********************************************************************************\r\n\r\n");
    cputs( "         not a warning!  all are welcome to access this system; there are no\r\n\r\n");
-   cputs( "         penalties, nor any system security policy,  and no applicable state\r\n\r\n");
+   cputs( "         penalties, nor any system security policy, and  no applicable state\r\n\r\n");
    cputs( "         or federal laws. sessions & e-mail are not monitored, as the system\r\n\r\n"); 
    cputs( "         has neither.     * * * note: system will be down if it is shut off.\r\n\r\n\r\n");
    cputs( "********************************************************************************\r\n");
    cprintf("                        commander x16 | %s", date);
 
    logo(2,19);
-
-
-   textcolor(COLOR_LIGHTRED);
-   cputsxy(22,40,"* * *   press a key to login   * * *");
-   cgetc();
-   cclearxy(2,25,70);
-   textcolor(5);
-
-   gotoxy(0,20);
+   gotoxy(0,31);
 }

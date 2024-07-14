@@ -7,7 +7,7 @@
 
 typedef struct {
 
-	int currentTurn : 16;
+    int date        : 16;
 	int historyTop  : 7;
 	int junk        : 9;
     char playerNames[MAX_PLAYERS][15];

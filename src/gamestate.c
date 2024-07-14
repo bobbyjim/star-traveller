@@ -9,8 +9,7 @@ GameState gameState;
 GameState* getGameState() { return &gameState; }
 
 void gamestate_nextTurn() {
-	gameState.currentTurn++;
-//	gameState.currentTurn %= MAX_PLAYERS;  // no we won't do it this way
+	gameState.date++;
     gamestate_save();
 }
 

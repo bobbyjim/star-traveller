@@ -23,10 +23,16 @@ int astrogation_fetch( MAP1* world, int col, int row )
 	  if (c == col && r == row) {
 	     MAP1* found = ((MAP1*)(0xa000 + i * 16));
 	     *world = *found; // copy please!
-		 return 1;
+		 return i;
 	  }
    }
-   return 0;
+   return -1;
+}
+
+void astrogation_fetch2( MAP2* world2, int offset )
+{
+	RAM_BANK = 2;
+	*world2 = *((MAP2*)(0xa000 + offset * 16)); // make a copy
 }
 
 //
@@ -38,8 +44,7 @@ int astrogation_fetch( MAP1* world, int col, int row )
 //  d  = 29 - 31 - 24 + 24 = 2
 //
 int distance( int col1, int row1,      
-              int col2, int row2, 
-              int maximumValue1, int maximumValue2 )
+              int col2, int row2 )
 {
    int aa = row1 + (col1/2);
    int ab = row2 + (col2/2);
@@ -52,94 +57,99 @@ int distance( int col1, int row1,
    if ((da >= db) && (da >= d)) d = da;
    if ((db >= da) && (db >= d)) d = db;
 
-   if (d > maximumValue1 || d > maximumValue2) return 0;
+//   if (d > maximumValue1 || d > maximumValue2) return -1;
 
    return d;
 }
 
-void astrogation_print_current()
+int astrogation_print_world(int col, int row)
 {
 	MAP1 current;
-    astrogation_fetch( &current, player.col, player.row);
-	printf("current world: (%02d%02d) %s", player.col, player.row, current.name );
+	MAP2 current2;
+	unsigned char color;
+
+	char bases[3] = { 0, 0, 0 };
+	char zone     = ' ';
+	char bg[3]    = { 0, 0, 0 };
+
+	int offset = astrogation_fetch( &current, col, row );
+	if (offset > -1)
+    {
+	   astrogation_fetch2( &current2, offset );
+	   bases[0] = current.hasNavalBase? 'n' : ' ';
+	   bases[1] = current.hasScoutBase? 's' : ' ';
+       zone     = current.isAmberZone?  'a' : current.isRedZone? 'r' : ' ';
+	   bg[0]    = current.hasBelt?      'b' : ' ';
+	   bg[1]    = current.hasGG?        'g' : ' ';
+
+       if (player.row == row && player.col == col )
+	      color = COLOR_LIGHTGREEN;
+	   else if (zone == 'a')
+	      color = COLOR_YELLOW;
+	   else if (zone == 'r')
+	      color = COLOR_LIGHTRED;
+	   else
+	      color = COLOR_LIGHTBLUE;
+
+       textcolor(color);
+	   printf(" %02d%02d  %-14s  %s  %s  %s  %c  ",
+		   col,
+		   row,
+		   current.name,
+		   current2.uwp,
+		   bases,
+		   bg,
+		   zone
+	   );
+	   return 1;
+	}
+	else
+	   return 0;
 }
 
-// void astrogation_show_range()
-// {
-//    int i,j;
-//    MAP1 world;
-
-//    int k=0;
-
-//    for(i=player.ship.col - player.ship.j; i<=player.ship.col + player.ship.j; ++i)
-//       for(j=player.ship.row - player.ship.j; j<=player.ship.row + player.ship.j; ++j)
-//       {
-//          int d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j);
-//          if (d > 0)
-// 			if (astrogation_fetch(&world, i, j)) 
-// 			{
-// 			   printf("%02d%02d ", world.col, world.row);
-// 			   if (k % 10 == 9) printf("\n    ");
-// 			   ++k;
-// 			}
-// 	  }
-// }
-
-int astrogation_menu()
+int astrogation_map()
 {
 	int i,j;
-	int hex;
 	int d;
 	int pos;
+	unsigned char color = COLOR_LIGHTRED;
 
-	clrscr();
-	gotoxy(1,1);
-	menu_draw( 74, 21, "astrogation" );
-	gotoxy(2,4);
+    textcolor(COLOR_GREEN);
+	puts("                                      |---asteroid belt ");
+	puts("                      scout base---|  ||--gas giant");
+	puts("                      naval base--||  ||  zone ");
+	puts("                                  ||  ||  | ");
+	puts(" hex   world name      uwp        ns  bg  z  distance");
+    textcolor(color);
 
     pos = 0;
     for(i=player.ship.col - player.ship.j; i<=player.ship.col + player.ship.j; ++i)
 	   for(j=player.ship.row - player.ship.j; j<=player.ship.row + player.ship.j; ++j)
 	   {
-		  d=distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j); // used to care about jump_fuel_carried but no longer
+		  d=distance(i,j,player.ship.col,player.ship.row); 
 		  
-		  if (d > 0) { 
-			  if (pos < 20) {
-		          MAP1 world;
-				  if (astrogation_fetch(&world, i, j)) {
-					 gotoxy(4 + (pos/7)*24, 4 + (pos%7)*2);
-					 cprintf(" %02u%02u ", i, j);
-					 textcolor(COLOR_LIGHTGREEN);
-					 cprintf("(%d)", d);
-					 textcolor(COLOR_WHITE);
-					 cprintf(" %-15s", world.name);
-					 ++pos;
+		  if (d > -1) {
+			  //if (pos < 20) {
+				  if (astrogation_print_world(i,j))
+				  {
+				     printf("%d\n", d);
+				     ++pos;
 				  }
-			  }
-			  else 
-			     cputsxy(48,20,"...and more");
-		  }
+			  //}
+			  //else 
+			    // puts("...and more");
+		   }
 	   }
-
-    gotoxy(2,25);
-    astrogation_print_current();
-
-	d=0;
-	while(d==0) {
-	   printf( "\n\n  enter destination hex: ");
-	   scanf("%d", &hex);
-	   if (hex == 0) return 0;
-	   d = astrogation_attempt_jump_to(hex);
-	}
+    textcolor(COLOR_GRAY3);
 }
 
 int astrogation_attempt_jump_to(int hex)
 {
    int i = hex / 100;
    int j = hex % 100;
-   int d = distance(i,j,player.ship.col,player.ship.row,player.ship.j,player.ship.j);
+   int d = distance(i,j,player.ship.col,player.ship.row);
 
-   if (d == 0) { // used to care about jump_fuel_carried but no longer
+   if (d == 0 || d > player.ship.j ) { 
       printf("\n  (%02d%02d) invalid destination!\n\n", i, j );
    }
    else {
