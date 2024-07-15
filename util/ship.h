@@ -16,63 +16,39 @@ typedef struct {
 } Turret; // 1 byte
 
 /*
-  There are 24 Hull Types:
-
-  #		Code	Name				Tonnage		Config	Hardpoints
-  - 	-   	----------- 		----------- ------	----------
-  0		S		Scout				100			L		1
-  1		J		Sloop				100			L		1
-  2		A		Trader				200			U 		2
-  3		K		Safari				200			L		1
-  4		U		Packet				300			S		2
-  5		E		Escort				300			B		3
-  6		R		Merchant			400			A		3
-  7		L		Lab					400			C		2
-  8		T		Patrol 				400			A		4
-  9		P		Corsair				400			U		4
-  10	V		Corvette			500			A		5
-  11	M		Liner				600			B		3
-  12	W		Shivva				600			B		6
-  13	N		Speculator			700			S		3
-  14	C		Broadsword			800			S		8
-  15	H		Long Liner			1000		U		3
-  16	Q		Research			1000		C		3
-  17	B		Kinunir				1200		A		8
-  18	X		Transport			1400		U		2
-  19	G		Frigate				1600		U		8
-  20	D		Leviathan			1800		B		4
-  21	Y		Cargoliner			2000		C		2
-  22	Z		Interdictor			2200		U		8
-  23	F		Freighter			2400		B		3
- 
+  There are 32 ship types.
 */
 typedef struct {
 
+	char name[16];					// ship name + null
+	int  m                  :4;
+	int  j                  :4;
+
+	int  bridge             :2;
+	int  globe              :1;
+	int  stealth            :1;
+	int  advancedSensors    :1;
+	int  feature3           :1;
+	int  feature4           :1;
+	int  feature5           :1;
+
+    int  av                 :8;
 	char qsp[7];					// quick-ship profile + null
-	int  tl 				:8;		// tech level
-	char name[14];					// ship name + null
+	char builder; 
+
+	int  cargo              :8;
+	int  passengers         :8;
+	int  lowBerths          :8;
+    char allegiance[3];				// two chars plus null
 
 	int  cost   			:8;		// cost in 10 MCr units
-	char builder;					// builder code
 
-	int  spare1     		:1;
-	int  hardpoints 		:3;		// 1-8
-	int  status     		:4;		// status (in starport, in shipyard, at GG, at belt, etc)
-	int  m 					:4;		// maneuver rating
-	int  j 					:4;		// jump rating
+	char status;
+    char spare[5];
 
-	int  ar     			:8;		// armor rating
-	int  passenger_blocks 	:8;		// passenger capacity (1 block = 4 tons)
-
-	int  cargo_blocks 		:8;		// cargo capacity (1 block = 4 tons)
-	int  lowberth_blocks 	:8;		// low berths (1 block = 4 tons)
-
-	int  col    			:8;		// hex map col
-	int  row    			:8;		// hex map row
-	
 	Turret turret[8]; 
 
-} Ship; // 40 bytes
+} Ship;  // 48 bytes
 
 /*
 typedef struct {

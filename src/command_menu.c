@@ -22,6 +22,7 @@ void command_endTurn()
 
 void command_menu() {
     int choice;
+    char yesno[2];
 
     while(player.turns_left>0) {
       textcolor(COLOR_GRAY3);
@@ -49,10 +50,14 @@ void command_menu() {
             if (choice > 100) // a hex code
             {
                printf("\njump to hex %04d? ", choice);
-               if (cgetc() == 'y')
+               scanf("%s", yesno);
+               if (yesno[0] == 'y')
                {
                   if (astrogation_attempt_jump_to(choice))
+                  {
                      player.turns_left--;
+                     printf("you are now at hex %04d\n", choice);
+                  }
                }
             }
        }

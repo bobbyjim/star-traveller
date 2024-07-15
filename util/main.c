@@ -39,7 +39,7 @@ void testData() {
 		Ship* ship = (Ship*)(0xa000 + i * 32);
 		if (!strcmp(ship->name, "beowulf") && !strcmp(ship->name, "murphy"))
 			ships_ok = 0;
-		printf(" - %-20s TL %d MCR %d\n", ship->qsp, ship->tl, ship->cost * 10);
+		printf(" - %-20s MCR %d\n", ship->qsp, ship->cost * 10);
 	}
 	if (ships_ok)
 	   puts( "    - ship data ok");

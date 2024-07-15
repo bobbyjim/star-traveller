@@ -123,10 +123,10 @@ int astrogation_map()
     textcolor(color);
 
     pos = 0;
-    for(i=player.ship.col - player.ship.j; i<=player.ship.col + player.ship.j; ++i)
-	   for(j=player.ship.row - player.ship.j; j<=player.ship.row + player.ship.j; ++j)
+    for(i=player.col - player.ship.j; i<=player.col + player.ship.j; ++i)
+	   for(j=player.row - player.ship.j; j<=player.row + player.ship.j; ++j)
 	   {
-		  d=distance(i,j,player.ship.col,player.ship.row); 
+		  d=distance(i,j,player.col,player.row); 
 		  
 		  if (d > -1) {
 			  //if (pos < 20) {
@@ -147,7 +147,7 @@ int astrogation_attempt_jump_to(int hex)
 {
    int i = hex / 100;
    int j = hex % 100;
-   int d = distance(i,j,player.ship.col,player.ship.row);
+   int d = distance(i,j,player.col,player.row);
 
    if (d == 0 || d > player.ship.j ) { 
       printf("\n  (%02d%02d) invalid destination!\n\n", i, j );
@@ -156,9 +156,6 @@ int astrogation_attempt_jump_to(int hex)
       // move player and ship
       player.col = i;
       player.row = j;
-      player.ship.col = i;
-      player.ship.row = j;
-    //player.ship.jump_fuel_carried -= d;  don't care
    }
    return d;
 }
