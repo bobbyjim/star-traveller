@@ -18,8 +18,9 @@ typedef struct {
 	int              :1;
 	int hasNavalBase :1;
 	int hasScoutBase :1;
-	int isAmberZone  :1;
-	int isRedZone    :1;
+	int zone         :2;
+//	int isAmberZone  :1;
+//	int isRedZone    :1;
 
 	int allegiance   :3;
 	int              :3;
